@@ -1,4 +1,4 @@
-<mujoco model="planar_snake_car_servo">
+<mujoco model="planar_snake_prototype">
     <compiler angle="degree" coordinate="local" inertiafromgeom="true"/>
 
     <option integrator="Euler" timestep="0.0125">
