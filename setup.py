@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='planar_snake_prototype_RL',
+setup(name='planar-snake-prototype-RL',
       version='0.1.0',
       author="Zhenshan Bing",
       install_requires=['numpy>=1.10.4',

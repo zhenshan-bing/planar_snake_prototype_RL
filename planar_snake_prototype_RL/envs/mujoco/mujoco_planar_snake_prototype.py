@@ -76,7 +76,7 @@ class MujocoPlanarSnakeCarsEnv(mujoco_env.MujocoEnv, MujocoHeadCam, utils.EzPick
 
     def get_mjcf_file(self):
         ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-        file = os.path.join(ROOT_DIR, '../assets', 'planar_snake_cars_servo.xml')
+        file = os.path.join(ROOT_DIR, '../assets', 'planar_snake_prototype.xml')
         return file
 
     def init_idx_values(self):
