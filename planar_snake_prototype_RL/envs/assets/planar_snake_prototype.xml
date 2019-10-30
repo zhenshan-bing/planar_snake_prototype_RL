@@ -63,7 +63,7 @@
         </body>
 
         <!-- the second object is the robot -->
-        <body name="car1" pos="0 -0.033 0.07">
+        <body name="car1" pos="0.024 -0.033 0.07">
 
             <joint axis="1 0 0" name="slider_x" type="slide"/>
             <joint axis="0 1 0" name="slider_y" type="slide"/>
@@ -90,49 +90,49 @@
             <camera name="track_snake4" mode="trackcom" pos="0 0 5" euler="0 0 0"/>
 
                 <body name="car2" pos="-0.08075 0 0.0">
-                    <joint name="joint01"/>
+                    <joint name="joint01" pos="-0.024 0.033 0"/>
                     <body pos="-0.027 0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_l_01"/><geom/></body>
                     <geom name="car2_geom" pos="0.0 0.0 0.0" type="mesh" mesh="module_asm" euler="270 270 0" rgba="0.8 0.7 .6 1"/>
                     <body pos="-0.027 -0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_r_01"/><geom/></body>
 
                     <body name="car3" pos="-0.08075 0 0.0">
-                        <joint name="joint02"/>
+                        <joint name="joint02" pos="-0.024 0.033 0"/>
                         <body pos="-0.027 0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_l_02"/><geom/></body>
                         <geom name="car3_geom" pos="0.0 0.0 0.0" type="mesh" mesh="module_asm" euler="270 270 0" rgba="0.8 0.7 .6 1"/>
                         <body pos="-0.027 -0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_r_02"/><geom/></body>
 
                         <body name="car4" pos="-0.08075 0 0.0">
-                            <joint name="joint03"/>
+                            <joint name="joint03" pos="-0.024 0.033 0"/>
                             <body pos="-0.027 0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_l_03"/><geom/></body>
                             <geom name="car4_geom" pos="0.0 0.0 0.0" type="mesh" mesh="module_asm" euler="270 270 0" rgba="0.8 0.7 .6 1"/>
                             <body pos="-0.027 -0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_r_03"/><geom/></body>
 
                             <body name="car5" pos="-0.08075 0 0.0">
-                                <joint name="joint04"/>
+                                <joint name="joint04" pos="-0.024 0.033 0"/>
                                 <body pos="-0.027 0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_l_04"/><geom/></body>
                                 <geom name="car5_geom" pos="0.0 0.0 0.0" type="mesh" mesh="module_asm" euler="270 270 0" rgba="0.8 0.7 .6 1"/>
                                 <body pos="-0.027 -0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_r_04"/><geom/></body>
 
                                 <body name="car6" pos="-0.08075 0 0.0">
-                                    <joint name="joint05"/>
+                                    <joint name="joint05" pos="-0.024 0.033 0"/>
                                     <body pos="-0.027 0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_l_05"/><geom/></body>
                                     <geom name="car6_geom" pos="0.0 0.0 0.0" type="mesh" mesh="module_asm" euler="270 270 0" rgba="0.8 0.7 .6 1"/>
                                     <body pos="-0.027 -0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_r_05"/><geom/></body>
 
                                     <body name="car7" pos="-0.08075 0 0.0">
-                                        <joint name="joint06"/>
+                                        <joint name="joint06" pos="-0.024 0.033 0"/>
                                         <body pos="-0.027 0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_l_06"/><geom/></body>
                                         <geom name="car7_geom" pos="0.0 0.0 0.0" type="mesh" mesh="module_asm" euler="270 270 0" rgba="0.8 0.7 .6 1"/>
                                         <body pos="-0.027 -0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_r_06"/><geom/></body>
 
                                         <body name="car8" pos="-0.08075 0 0.0">
-                                            <joint name="joint07"/>
+                                            <joint name="joint07" pos="-0.024 0.033 0"/>
                                             <body pos="-0.027 0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_l_07"/><geom/></body>
                                             <geom name="car8_geom" pos="0.0 0.0 0.0" type="mesh" mesh="module_asm" euler="270 270 0" rgba="0.8 0.7 .6 1"/>
                                             <body pos="-0.027 -0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_r_07"/><geom/></body>
 
                                             <body name="car9" pos="-0.08075 0 0.0">
-                                                <joint name="joint08"/>
+                                                <joint name="joint08" pos="-0.024 0.033 0"/>
                                                 <body pos="-0.027 0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_l_08"/><geom/></body>
                                                 <geom name="car9_geom" pos="0.0 0.0 0.0" type="mesh" mesh="module_asm" euler="270 270 0" rgba="0.8 0.7 .6 1"/>
                                                 <body pos="-0.027 -0.02775 -0.0168" childclass="wheel"><joint name="joint_wheel_r_08"/><geom/></body>
