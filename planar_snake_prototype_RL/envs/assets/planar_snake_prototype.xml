@@ -8,7 +8,7 @@
     <size nconmax="1000"/>
 
     <default>
-        <geom conaffinity="0" condim="3" friction="1 0.05 0.00001" margin="0.01" density="2690" />
+        <geom conaffinity="0" condim="3" friction="1 0.05 0.00001" margin="0.01" density="4690" />
 
         <joint armature='0.001' damping="0" frictionloss="0.001" />
 
@@ -24,7 +24,7 @@
         </default>
 
 
-        <position ctrllimited="true" ctrlrange="-1.5 1.5" forcelimited="true" forcerange="-20.0 20.0" kp="10" gear="0.175"/>
+        <position ctrllimited="true" ctrlrange="-1.5 1.5" forcelimited="true" forcerange="-16.36 16.36" kp="4" gear="0.08075"/>
 
     </default>
 
