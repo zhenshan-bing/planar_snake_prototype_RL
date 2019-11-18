@@ -1,6 +1,7 @@
 import time
 import numpy as np
 from mujoco_py import load_model_from_xml, MjSim, MjViewer
+from pprint import pprint
 
 XML = '''
 <mujoco>
@@ -18,9 +19,19 @@ XML = '''
 model = load_model_from_xml(XML)
 sim = MjSim(model)
 viewer = MjViewer(sim)
+pprint(sim.model.geom_friction)
+pprint(sim.model.geom_rgba)
+# pprint(dir(sim.model))
 
+start_time = time.time()
 while True:
-    sim.model.opt.gravity[0] = np.sin(time.time())
-    sim.model.opt.gravity[1] = np.cos(time.time())
+    sim.model.opt.gravity[0] = np.sin(time.time())*0.1
+    sim.model.opt.gravity[1] = np.cos(time.time())*0.1
+    # pprint(dir(sim.model.opt))
+    # print(sim.model.opt)
+    # sim.model.geom_friction[0,0] = 1.e6
+    if time.time() - start_time > 5:
+        sim.model.geom_rgba[1:] = [0,1,0,1]
+    # pprint(sim.model.geom_friction)
     sim.step()
     viewer.render()
