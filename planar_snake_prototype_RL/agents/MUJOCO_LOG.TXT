@@ -79,6 +79,9 @@ ERROR: GLEW initalization error: Missing GL version
 Mon Nov 18 10:57:37 2019
 ERROR: GLEW initalization error: Missing GL version
 
+<<<<<<< HEAD
 Mon Nov 18 10:59:41 2019
 ERROR: GLEW initalization error: Missing GL version
 
+=======
+>>>>>>> 9e4b09cc5cfb1d2cc974a6ba01990919e14bc2bd
