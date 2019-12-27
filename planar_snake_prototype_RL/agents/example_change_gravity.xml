@@ -1,0 +1,9 @@
+<mujoco>
+    <worldbody>
+        <geom name='floor' pos='0 0 -0.1' size='5 5 .125' type='plane' condim='3'/>
+        <body name='ball' pos='0 0 1'>
+            <joint type='free'/>
+            <geom name='ball' pos='0.1 0.1 0.1' size='.1' mass ='0.5' type='sphere' rgba='1 0 0 1'/>
+        </body>
+    </worldbody>
+</mujoco>

@@ -347,8 +347,11 @@ def train_ppo1(env_id, num_timesteps, sfs, seed):
     sess = U.make_session(num_cpu=4)
     sess.__enter__()
     set_global_seeds(seed)
+    print("################## I am HERE 3 ###############")
     env = gym.make(env_id)
-
+    print(env.unwrapped.sim.model.geom_rgba)
+    # print(env.unwrapped.sim.model.geom_pos)
+    print("################## I am HERE 4 ###############")
     model_dir = get_model_dir(env_id, 'ppo')
 
 
