@@ -8,7 +8,7 @@ import tensorflow as tf
 from collections import Counter
 from sklearn.model_selection import ParameterGrid, GridSearchCV
 
-from gym_mujoco_planar_snake.benchmark.info_collector import InfoCollector, InfoDictCollector
+from planar_snake_prototype_RL.benchmark.info_collector import InfoCollector, InfoDictCollector
 
 import numpy as np
 
@@ -371,7 +371,7 @@ def main():
     #parser.add_argument('--env', help='environment ID', default='Mujoco-planar-snake-cars-angle-random-v1')
 
     # render
-    parser.add_argument('--render', help='render simulation', type=bool, default=False)
+    parser.add_argument('--render', help='render simulation', type=bool, default=True)
 
     args = parser.parse_args()
     logger.configure()
@@ -393,8 +393,8 @@ def main():
     # Enjoy this controller    
     else:
         print("----------Third----------")
-        evaluate_target_tracking(args.env, args.render)
-        # enjoy(args.env)
+        # evaluate_target_tracking(args.env, args.render)
+        enjoy(args.env)
         
 
 if __name__ == '__main__':

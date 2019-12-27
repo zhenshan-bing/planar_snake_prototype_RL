@@ -9,12 +9,12 @@ from gym.envs.robotics import rotations
 from mujoco_py import MjViewer, MjSim, MjRenderPool, MjRenderContextOffscreen
 import copy
 
-from gym_mujoco_planar_snake.envs.mujoco_15.mujoco_head_cam import MujocoHeadCam
-from gym_mujoco_planar_snake.benchmark.tracks_generator import TracksGenerator
+from planar_snake_prototype_RL.envs.mujoco.mujoco_head_cam import MujocoHeadCam
+from planar_snake_prototype_RL.benchmark.tracks_generator import TracksGenerator
 from skimage import color
 from skimage import transform
 
-from gym_mujoco_planar_snake.benchmark.plot_data import plot_head_cam as phc
+from planar_snake_prototype_RL.benchmark.plot_data import plot_head_cam as phc
 
 
 class MujocoPlanarSnakeCarsEnv(mujoco_env.MujocoEnv, MujocoHeadCam, utils.EzPickle):

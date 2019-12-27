@@ -1,6 +1,7 @@
 from gym.core import ObservationWrapper
 #from baselines.common import tf_util as U
-from gym_mujoco_planar_snake.common import my_tf_util as U
+from planar_snake_prototype_RL.common import my_tf_util as U
+
 from baselines import logger
 import os.path as osp
 import time
