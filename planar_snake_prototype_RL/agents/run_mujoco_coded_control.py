@@ -15,7 +15,8 @@ import numpy as np
 import os
 import os.path as osp
 
-from gym_mujoco_planar_snake.common.model_saver_wrapper import ModelSaverWrapper
+# from gym_mujoco_planar_snake.common.model_saver_wrapper import ModelSaverWrapper
+from planar_snake_prototype_RL.common.model_saver_wrapper import ModelSaverWrapper
 import gym_mujoco_planar_snake.benchmark.plots as import_plots
 #from gym_mujoco_planar_snake.common.my_observation_wrapper import MyObservationWrapper
 
@@ -362,7 +363,9 @@ def main():
 
     # env
     #parser.add_argument('--env', help='environment ID', default='Mujoco-planar-snake-cars-angle-v1')
-    parser.add_argument('--env', help='environment ID', default='Mujoco-planar-snake-cars-angle-line-v1')
+    # parser.add_argument('--env', help='environment ID', default='Mujoco-planar-snake-cars-angle-line-v1')
+    parser.add_argument('--env', help='environment ID', default='Planar-snake-prototype-v1')
+    
     #parser.add_argument('--env', help='environment ID', default='Mujoco-planar-snake-cars-angle-zigzag-v1')
     #parser.add_argument('--env', help='environment ID', default='Mujoco-planar-snake-cars-angle-circle-v1')
     #parser.add_argument('--env', help='environment ID', default='Mujoco-planar-snake-cars-angle-random-v1')
@@ -390,7 +393,7 @@ def main():
     # Enjoy this controller    
     else:
         print("----------Third----------")
-        evaluate_target_tracking(args.env)
+        evaluate_target_tracking(args.env, args.render)
         # enjoy(args.env)
         
 
