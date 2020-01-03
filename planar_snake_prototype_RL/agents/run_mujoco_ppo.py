@@ -347,16 +347,15 @@ def train_ppo1(env_id, num_timesteps, sfs, seed):
     sess = U.make_session(num_cpu=4)
     sess.__enter__()
     set_global_seeds(seed)
-<<<<<<< HEAD
-    print("################## I am HERE 3 ###############")
-    env = gym.make(env_id)
-    print(env.unwrapped.sim.model.geom_rgba)
-    # print(env.unwrapped.sim.model.geom_pos)
-    print("################## I am HERE 4 ###############")
-=======
+
+    # print("################## I am HERE 3 ###############")
+    # env = gym.make(env_id)
+    # print(env.unwrapped.sim.model.geom_rgba)
+    # # print(env.unwrapped.sim.model.geom_pos)
+    # print("################## I am HERE 4 ###############")
+
     env = gym.make(env_id)
 
->>>>>>> 9e4b09cc5cfb1d2cc974a6ba01990919e14bc2bd
     model_dir = get_model_dir(env_id, 'ppo')
 
 
@@ -389,7 +388,7 @@ def main():
     #parser.add_argument('--seed', help='RNG seed', type=int, default=1)
     parser.add_argument('--seed', help='RNG seed', type=int, default=0)
 
-    parser.add_argument('--num-timesteps', type=int, default=int(3e6))  # 1e6
+    parser.add_argument('--num-timesteps', type=int, default=int(1e6))  # 1e6
 
     #parser.add_argument('--train', help='do training or load model', type=bool, default=True)
     parser.add_argument('--train', help='do training or load model', type=bool, default=False)
