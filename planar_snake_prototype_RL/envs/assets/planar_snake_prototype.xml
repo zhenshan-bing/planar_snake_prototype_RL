@@ -8,7 +8,7 @@
     <size nconmax="1000" njmax="8000"/>
 
     <default>
-        <geom conaffinity="0" condim="3" friction="1 1.00 0.00001" margin="0.001" density="4690" />
+        <geom conaffinity="0" condim="3" friction="1 0.05 0.00001" margin="0.001" density="4690" />
         <joint armature='0.01' damping="0.1" frictionloss="0.001" />
         <default class="wheel">
             <joint axis="0 1 0" type="hinge" damping="0.001" armature='0.00001'/>
