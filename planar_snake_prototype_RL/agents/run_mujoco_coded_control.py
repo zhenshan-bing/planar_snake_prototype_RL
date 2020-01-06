@@ -17,7 +17,7 @@ import os.path as osp
 
 # from gym_mujoco_planar_snake.common.model_saver_wrapper import ModelSaverWrapper
 from planar_snake_prototype_RL.common.model_saver_wrapper import ModelSaverWrapper
-import gym_mujoco_planar_snake.benchmark.plots as import_plots
+import planar_snake_prototype_RL.benchmark.plots as import_plots
 # from gym_mujoco_planar_snake.common.my_observation_wrapper import MyObservationWrapper
 
 import math
