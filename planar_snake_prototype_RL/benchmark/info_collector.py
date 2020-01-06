@@ -1,7 +1,7 @@
 
 import numpy as np
 import pandas as pd
-from gym_mujoco_planar_snake.benchmark import plots
+from planar_snake_prototype_RL.benchmark import plots
 from time import gmtime, strftime
 import itertools
 import os

@@ -69,6 +69,8 @@ class MujocoPlanarSnakeCarsEnv(mujoco_env.MujocoEnv, MujocoHeadCam, utils.EzPick
 
         self.wheels_pos = []
 
+        self.a_before = [0, 0, 0, 0, 0, 0, 0, 0]
+
         frame_skip = 4 # 4
 
         utils.EzPickle.__init__(self)
@@ -424,7 +426,6 @@ class MujocoPlanarSnakeCarsAngleEnv(MujocoPlanarSnakeCarsEnv):
     def step(self, a):
         
 
-
         # first init
         if self.sliders_idx == None:
             self.init_idx_values()
@@ -434,7 +435,19 @@ class MujocoPlanarSnakeCarsAngleEnv(MujocoPlanarSnakeCarsEnv):
 
 
         distbefore = self.calc_distance()
+
+        for i in range(0, 8):
+            if a[i] > self.a_before[i] + 1 / 180 * np.pi:
+                a[i] = self.a_before[i] + 1 / 180 * np.pi
+            elif a[i] < self.a_before[i] - 1 / 180 * np.pi:
+                a[i] = self.a_before[i] - 1 / 180 * np.pi
+            else:
+                pass
+
         self.do_simulation(a, self.frame_skip)
+
+        self.a_before = a
+
         distafter = self.calc_distance()
 
 
