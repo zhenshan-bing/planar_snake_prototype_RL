@@ -388,7 +388,7 @@ def main():
     #parser.add_argument('--seed', help='RNG seed', type=int, default=1)
     parser.add_argument('--seed', help='RNG seed', type=int, default=0)
 
-    parser.add_argument('--num-timesteps', type=int, default=int(1e6))  # 1e6
+    parser.add_argument('--num-timesteps', type=int, default=int(3e5))  # 1e6
 
     #parser.add_argument('--train', help='do training or load model', type=bool, default=True)
     parser.add_argument('--train', help='do training or load model', type=bool, default=False)
