@@ -437,10 +437,10 @@ class MujocoPlanarSnakeCarsAngleEnv(MujocoPlanarSnakeCarsEnv):
         distbefore = self.calc_distance()
 
         for i in range(0, 8):
-            if a[i] > self.a_before[i] + 0.5 / 180 * np.pi:
-                a[i] = self.a_before[i] + 0.5 / 180 * np.pi
-            elif a[i] < self.a_before[i] - 0.5 / 180 * np.pi:
-                a[i] = self.a_before[i] - 0.5 / 180 * np.pi
+            if a[i] > self.a_before[i] + 5 / 180 * np.pi:
+                a[i] = self.a_before[i] + 5 / 180 * np.pi
+            elif a[i] < self.a_before[i] - 5 / 180 * np.pi:
+                a[i] = self.a_before[i] - 5 / 180 * np.pi
             else:
                 pass
 
