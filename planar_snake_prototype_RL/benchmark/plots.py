@@ -138,7 +138,7 @@ class Plots():
         #df.plot(x='velocity', y='power_normalized', c='w_para', kind='scatter', xlim = [0.0, 1.0], ylim=[0.0, 1.0])
         #df.plot(x='velocity', y='power_normalized', kind='scatter', xlim=[0.0, 1.0], ylim=[0.0, 1.0])
         #ax = df.plot(x='velocity', y='power', kind='scatter', xlim=[0.0, 1.0], ylim=[0.0, 10000.0], figsize=(8,6))
-        ax = df.plot(x='velocity', y='total_power_mWh', kind='scatter', xlim=[0, 0.3], ylim=[0.0, 50.0],figsize=(8, 5))#, figsize=(9,6))
+        ax = df.plot(x='velocity', y='total_power_mWh', kind='scatter', xlim=[0, 0.3], ylim=[0.0, 5.0],figsize=(8, 5))#, figsize=(9,6))
 
         ax.set_xlabel("Velocity [m/s]")
         ax.set_ylabel("Power [mW]")
@@ -159,7 +159,7 @@ class Plots():
         # Ws to mWh
         df['total_power_mWh'] = df['total_power_sec'] / 3600 * 1000
 
-        ax = df.plot(x='distance_delta', y='total_power_mWh', kind='scatter', xlim=[0.0, 10.0], ylim=[0.0, 50.0], figsize=(8, 5))
+        ax = df.plot(x='distance_delta', y='total_power_mWh', kind='scatter', xlim=[0.0, 10.0], ylim=[0.0, 5.0], figsize=(8, 5))
 
         ax.set_xlabel("Distance [m]")
         ax.set_ylabel("Energy [mW]")
