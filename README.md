@@ -14,8 +14,8 @@ python3 -m venv ./planar_snake_prototype_env
 source ./planar_snake_prototype_env/bin/activate
 ```
 #### 2. Install MuJoCo
--- MuJoCo 200
--- Apply/use a temporal license first
+- MuJoCo 200 at [https://www.roboti.us/index.html](https://www.roboti.us/index.html)
+-- Apply/use a temporal license first at [https://www.roboti.us/license.html](https://www.roboti.us/license.html)
 
 #### 3. Install mujoco_py
 Please follow the instructions at [https://github.com/openai/mujoco-py](https://github.com/openai/mujoco-py)
