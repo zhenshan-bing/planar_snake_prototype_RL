@@ -33,7 +33,7 @@ from pprint import pprint
 # also for benchmark
 # run untill done
 # def run_environment_episode(env, max_timesteps, render, lambda_deg=40, alpha_deg=60, w_para=2.25, y_para=0.4):
-def run_environment_episode(env, max_timesteps, render, lambda_deg=110, alpha_deg=60, w_para=2, y_para=0.4):
+def run_environment_episode(env, max_timesteps, render, lambda_deg=50, alpha_deg=60, w_para=0.5, y_para=0.4):
     number_of_timestep = 0
     done = False
 
@@ -57,10 +57,10 @@ def run_environment_episode(env, max_timesteps, render, lambda_deg=110, alpha_de
     t = 0
 
     # Lenght of one Snake - Car - Module
-    m = 0.35
+    m = 0.08
 
     # linear reduction parameters(set y = 0 and z = 1 for disabling)
-    y = y_para  # 0.5, 0.4
+    y = y_para*0  # 0.5, 0.4
     z = 1 - y
 
     # Motion Parameters
@@ -200,11 +200,12 @@ def evaluate_power_velocity(env_id):
     # y_para = [0.1]
 
     # final
-    lambda_deg = np.arange(40, 180, 40)  # 15
-    alpha_deg = np.arange(40, 130, 40)  # 9
+    lambda_deg = np.arange(40, 180, 10)  # 15
+    alpha_deg = np.arange(50, 90, 10)  # 9
     # w_para = np.arange(0.25, 3.25, 0.25)  # 12
     w_para = np.arange(0.25, 2.0, 0.25)  # 12
-    y_para = np.arange(0.1, 0.5, 0.2)  # 4
+    # y_para = np.arange(0.1, 0.5, 0.1)  # 4
+    y_para = [0.1]
     # y_para = np.arange(0.1, 0.4, 0.1)  # 4
 
     # lambda_deg = np.arange(40, 190, 40)  # 15

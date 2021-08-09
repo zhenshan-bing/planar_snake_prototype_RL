@@ -127,12 +127,25 @@ class MujocoPlanarSnakeCarsEnv(mujoco_env.MujocoEnv, MujocoHeadCam, utils.EzPick
         return head_x, head_y
 
     def get_head_pos(self):
-        pos = self.data.get_geom_xpos(self.geom_head_name)
-        return pos[0], pos[1]
+        # pos = self.data.get_geom_xpos(self.geom_head_name)
+        # return pos[0], pos[1]
 
         #x, y= self.get_head_cam_pos() #also possible
         #x,y = self.get_body_pos()
         #return x, y
+        x, y = 0, 0
+        for i in self.body_cars_names:
+            pos = self.data.get_body_xpos(i)
+            x += pos[0]
+            y += pos[1]
+        x /= len(self.body_cars_names)
+        y /= len(self.body_cars_names)
+        # print(len(self.body_cars_names))
+        # print(self.data.get_geom_xpos(self.geom_head_name), self.data.get_body_xpos("car1"))
+        # print(self.sim.data.qpos.flat[self.body_cars_idx[0]])
+        # pos = self.data.get_geom_xpos(self.geom_head_name)
+
+        return x, y
 
     def get_target_pos(self):
         #pos = np.array(self.get_body_com('target_ball'))
@@ -280,7 +293,7 @@ class MujocoPlanarSnakeCarsEnv(mujoco_env.MujocoEnv, MujocoHeadCam, utils.EzPick
         # joint velocitys
         joints_vel = self.get_joint_velocities()
 
-        max_joint_vel = 25.0
+        max_joint_vel = 10.0  # 25, 15
 
         # actuator torque
         actuator_torques = np.array(actuator_force) * actuator_gear
@@ -339,7 +352,7 @@ class MujocoPlanarSnakeCarsAngleEnv(MujocoPlanarSnakeCarsEnv):
     #target_v_array = [0.05, 0.1, 0.15, 0.20, 0.25, 0.3] # meh 0.3 is not easy
 
     # final
-    target_v_array = [0.05, 0.1, 0.15, 0.20, 0.25] #really good, linear
+    target_v_array = [0.05, 0.1, 0.15, 0.20, 0.25, 0.30] #really good, linear
 
     target_v = 0.042 # dummy
     update = 0
@@ -437,13 +450,13 @@ class MujocoPlanarSnakeCarsAngleEnv(MujocoPlanarSnakeCarsEnv):
         distbefore = self.calc_distance()
 
         for i in range(0, 8):
-            if a[i] > self.a_before[i] + 5 / 180 * np.pi:
-                a[i] = self.a_before[i] + 5 / 180 * np.pi
-            elif a[i] < self.a_before[i] - 5 / 180 * np.pi:
-                a[i] = self.a_before[i] - 5 / 180 * np.pi
+            if a[i] > self.a_before[i] + 10 / 180 * np.pi:
+                a[i] = self.a_before[i] + 10 / 180 * np.pi
+            elif a[i] < self.a_before[i] - 10 / 180 * np.pi:
+                a[i] = self.a_before[i] - 10 / 180 * np.pi
             else:
                 pass
-
+        # print("Clipping Step Size")
         self.do_simulation(a, self.frame_skip)
 
         self.a_before = a

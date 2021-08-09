@@ -132,16 +132,16 @@ class Plots():
         # 6cm/s
         # 143.4 mWh/m
 
-        df['total_power_mWh'] = df['total_power_sec'] / 3600 * 1000
+        df['total_power_mWh'] = df['total_power_sec']
 
 
         #df.plot(x='velocity', y='power_normalized', c='w_para', kind='scatter', xlim = [0.0, 1.0], ylim=[0.0, 1.0])
         #df.plot(x='velocity', y='power_normalized', kind='scatter', xlim=[0.0, 1.0], ylim=[0.0, 1.0])
         #ax = df.plot(x='velocity', y='power', kind='scatter', xlim=[0.0, 1.0], ylim=[0.0, 10000.0], figsize=(8,6))
-        ax = df.plot(x='velocity', y='total_power_mWh', kind='scatter', xlim=[0, 0.3], ylim=[0.0, 5.0],figsize=(8, 5))#, figsize=(9,6))
+        ax = df.plot(x='velocity', y='total_power_mWh', kind='scatter', xlim=[0, 0.3], ylim=[0.0, 50.0], figsize=(8, 5))#, figsize=(9,6))
 
         ax.set_xlabel("Velocity [m/s]")
-        ax.set_ylabel("Power [mW]")
+        ax.set_ylabel("Power [W]")
         #ax.set_ylabel("energy [joules/s]")
 
         for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
@@ -157,12 +157,12 @@ class Plots():
     def plot_energy_distance_diagram(self, df, fname):
         #, xlim=[0.0, 1.0], ylim=[0.0, 1.0]
         # Ws to mWh
-        df['total_power_mWh'] = df['total_power_sec'] / 3600 * 1000
+        df['total_power_mWh'] = df['total_power_sec']
 
-        ax = df.plot(x='distance_delta', y='total_power_mWh', kind='scatter', xlim=[0.0, 10.0], ylim=[0.0, 5.0], figsize=(8, 5))
+        ax = df.plot(x='distance_delta', y='total_power_mWh', kind='scatter', xlim=[0.0, 10.0], ylim=[0.0, 50.0], figsize=(8, 5))
 
         ax.set_xlabel("Distance [m]")
-        ax.set_ylabel("Energy [mW]")
+        ax.set_ylabel("Energy [W]")
 
         plt.savefig(self.dir + '/' + fname + '_energy_distance_diagram.pdf', dpi=600, bbox_inches='tight')
         plt.savefig(self.dir + '/' + fname + '_energy_distance_diagram.png', dpi=600, bbox_inches='tight')
