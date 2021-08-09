@@ -31,7 +31,12 @@ git clone https://github.com/BZSROCKETS/planar_snake_prototype_RL.git
 cd planar_snake_prototype_RL
 pip install -e .
 ```
-### Testing
+### Train
+create a folder to save the training results
 ```bash 
-python planar_snake_prototype_RL/planar_snake_prototype_RL/agents/run_mujoco_ppo.py
+mkdir ~/openai_logdir/models
+```
+train the agent with PPO
+```bash 
+python planar_snake_prototype_RL/planar_snake_prototype_RL/agents/run_mujoco_ppo.py  --train=1 --env Planar-snake-prototype-v1
 ```

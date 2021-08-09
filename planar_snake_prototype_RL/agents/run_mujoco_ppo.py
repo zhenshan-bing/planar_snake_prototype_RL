@@ -283,8 +283,8 @@ def enjoy(env_id, seed):
 
 
 
-        print("actionspace", env.action_space)
-        print("observationspace", env.observation_space)
+        # print("actionspace", env.action_space)
+        # print("observationspace", env.observation_space)
 
         gym.logger.setLevel(logging.WARN)
 
