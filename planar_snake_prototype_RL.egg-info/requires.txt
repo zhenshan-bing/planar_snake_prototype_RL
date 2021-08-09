@@ -1,4 +1,10 @@
 numpy>=1.10.4
-gym[classic_control,mujoco]
+gym==0.11.0
 glfw>=1.4.0
 Cython>=0.27.2
+baselines
+tensorflow==1.14.0
+sklearn
+pandas
+matplotlib
+scikit-image
