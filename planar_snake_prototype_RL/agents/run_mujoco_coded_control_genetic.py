@@ -13,6 +13,7 @@ from planar_snake_prototype_RL.benchmark.info_collector import InfoCollector, In
 import  planar_snake_prototype_RL.benchmark.plots as import_plots
 
 import numpy as np
+from time import gmtime, strftime
 
 import os
 import os.path as osp
@@ -238,6 +239,54 @@ def evaluate_power_velocity(env_id):
 
     info_dict_collector.print_rank2()
 
+from geneticalgorithm import geneticalgorithm as ga
+# genetic algorithm
+def evaluate_power_velocity_genetic(env_id):
+    env = gym.make(env_id)
+
+    print("actionspace", env.action_space)
+    print("observationspace", env.observation_space)
+
+    gym.logger.setLevel(logging.WARN)
+    info_dict_collector=InfoDictCollector(env)
+    fname = 'genetic_algorithm_results_{}'.format(strftime("%Y-%m-%d_%H:%M:%S", gmtime()))
+
+    # TODO change genetic algorithm parameters
+    algorithm_param = {'max_num_iteration': 100,\
+                   'population_size':10,\
+                   'mutation_probability':0.15,\
+                   'elit_ratio': 0.01,\
+                   'crossover_probability': 0.5,\
+                   'parents_portion': 0.3,\
+                   'crossover_type':'uniform',\
+                   'max_iteration_without_improv':None}
+    
+    for i in range(0, 12):
+
+        #print(i)
+
+        pbounds = np.array([[40,190],[40,130],[0.1,0.5],[0.25*i,(i+1)*0.25]])  
+
+        def fitness_function(p):
+            param = iter(p)
+            lambda_deg = next(param)
+            alpha_deg = next(param)
+            y_para = next(param)
+            w_para = next(param)
+            done, number_of_timesteps, info_collector = \
+                run_environment_episode(env, env._max_episode_steps, False, lambda_deg, alpha_deg, w_para, y_para)
+           
+            mean_dict = info_collector.get_mean_dict_200(['velocity'])
+            info_dict_collector.add_info_collector2(info_collector)
+            # model.run() calculates the minimum - in order to calculate the maximum we need to return the negative velocity value
+            return -mean_dict['velocity']
+
+        model = ga(function=fitness_function, dimension = 4, variable_type = 'real', variable_boundaries = pbounds, function_timeout = 40, algorithm_parameters = algorithm_param, convergence_curve = False)
+        model.run()
+        info_dict_collector.print_rank3(fname)
+
+    
+    info_dict_collector.get_plot(fname)
 
 
 def enjoy(env_id):
@@ -344,6 +393,7 @@ def main():
     # grid
     parser.add_argument('--evaluate_power_velocity', type=bool, default=False)  # 1e6
     parser.add_argument('--bayes', type=bool, default=True)  # 1e6
+    parser.add_argument('--evaluate_power_velocity_genetic', type=bool, default=False)
 
     # env
     #parser.add_argument('--env', help='environment ID', default='Mujoco-planar-snake-cars-angle-v1')
@@ -366,6 +416,8 @@ def main():
             # beyas_power_velocity_test(args.env)
         #else:
             #evaluate_power_velocity(args.env)
+    elif args.evaluate_power_velocity_genetic:
+        evaluate_power_velocity_genetic(args.env)
     else:
         enjoy(args.env)
 

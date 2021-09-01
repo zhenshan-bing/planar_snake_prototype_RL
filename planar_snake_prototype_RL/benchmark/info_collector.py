@@ -177,6 +177,19 @@ class InfoDictCollector():
         my_plots.plot_energy_distance_diagram(df, fname)
 
 
+    def print_rank3(self, fname):
+        df = pd.DataFrame.from_dict(self.all_mean_dict)
+        self.all_mean_dict = None
+        df = df.nlargest(1,['velocity'])
+        print(df.to_string())
+
+        logger.configure()
+        self.dir = osp.join(logger.get_dir(), '../../power_velocity')
+
+        if not os.path.exists(self.dir):
+            os.makedirs(self.dir)
+
+        df.to_csv('{}/{}.csv'.format(self.dir, fname), mode='a', header=False)
 
 
 

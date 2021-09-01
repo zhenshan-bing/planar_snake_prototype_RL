@@ -370,6 +370,7 @@ def train_ppo1(env_id, num_timesteps, sfs, seed):
     env.seed(seed)
     # env.render()
     gym.logger.setLevel(logging.WARN)
+    print("Number of Total Steps: ", num_timesteps)
     pposgd_simple.learn(env, policy_fn,
                         max_timesteps=num_timesteps,
                         timesteps_per_actorbatch=2048,
@@ -388,7 +389,7 @@ def main():
     #parser.add_argument('--seed', help='RNG seed', type=int, default=1)
     parser.add_argument('--seed', help='RNG seed', type=int, default=0)
 
-    parser.add_argument('--num-timesteps', type=int, default=int(1e6))  # 1e6
+    parser.add_argument('--num-timesteps', type=int, default=int(1.5e7))  # 1e6
 
     #parser.add_argument('--train', help='do training or load model', type=bool, default=True)
     parser.add_argument('--train', help='do training or load model', type=bool, default=False)

@@ -11,7 +11,7 @@ bayes_opt_data_power = []
 bayes_opt_data_velocity = []
 
 
-for i in range(0, 12):
+for i in range(0, 8):
 	df = pd.read_csv('./bayes_opt_data/bayes_opt_data_'+str(i)+'.csv', header=None, skiprows=1)
 	a = df.values
 	a = np.amax(a, axis=0)

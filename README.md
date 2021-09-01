@@ -66,3 +66,8 @@ train the agent with PPO
 ```bash 
 python planar_snake_prototype_RL/planar_snake_prototype_RL/agents/run_mujoco_ppo.py  --train=1 --env Planar-snake-prototype-v1
 ```
+
+### Bayesian
+```bash 
+python planar_snake_prototype_RL/planar_snake_prototype_RL/agents/run_mujoco_coded_control_BayesianOptimization.py --evaluate_power_velocity True
+```
